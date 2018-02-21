@@ -1,0 +1,68 @@
+body {
+    background-image: url('../images/cave_interior_background_by_sketcheth-d3kpvx8.jpg');
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Fredericka the Great', cursive;
+    color: white;
+}
+
+#instructions {
+    border: solid 1px white;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    display: inline-block;
+    float: left;
+}
+
+#instructions p {
+    color: white;
+    text-align: justify;
+}
+
+#record {
+    background-color: lightcoral;
+    margin-left: 25px;
+}
+
+#record h3 {
+    color: white;
+    width: auto;
+    height: auto;
+}
+
+#crystals {
+    border: solid 1px white;
+    display: inline-block;
+    padding: 2px;
+    margin-bottom: 15px;
+}
+
+#crystals img {
+    height: 75px;
+    width: 75;
+}
+
+#scoreText {
+    color: white;
+}
+
+#randomNumber {
+    height: 50px;
+    width: 125px;
+    border: solid 1px white;
+    background-color: lightblue;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+#totalScore {
+    height: 50px;
+    border: solid 1px white;
+    background-color: lightblue;
+    margin-bottom: 15px;
+    display: inline-block;
+    text-align: center;
+    padding: 0 auto;
+}

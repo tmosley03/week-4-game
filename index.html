@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="assets\css\reset.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets\css\style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!--  jQuery API  -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1> Crystal Collector</h1>
+        </header>
+        <div id="instructions" class="col-lg-4">
+            <p>You will be given a random number at the start of the game. <br> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br> <br> You will win the game by matching your total score
+                to random the number, you lose the game if your total score goes above the random number. <br><br>The value of each crystal is hidden from you until you click on it.<br> <br>Each time when the game starts, the game will change the values
+                of each crystal.
+            </p>
+        </div>
+        <div class="row">
+            <div id="randomNumber" class="col-lg-2"></div>
+            <div id="record" class="col-lg-2">
+                <h5 id="wins">Wins: </h5>
+                <h5 id="loses">Loses: </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div id="crystals">
+                <img id="stone1" src="assets\images\Amethyst.png" alt="">
+                <img id="stone2" src="assets\images\Sapphire.png">
+                <img id="stone3" src="assets\images\Swarovski-crystal-icon.png" alt="">
+                <img id="stone4" src="assets\images\Zircon.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <h4 id="scoreText">Your total score is:</h4>
+            <div class="col-lg-3" id="totalScore"></div>
+        </div>
+    </div>
+</body>
+<footer>
+    <!-- <link rel="stylesheet" href="assets\javascript\script.js"> -->
+</footer>
+
+</html>
