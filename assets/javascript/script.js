@@ -2,78 +2,112 @@
 
 // alert("JS !");
 
-var minNum = "19"
-var maxNum = "121"
-var btnMin = "1"
-var btnMax = "13"
-var wins = 0
-var loses = 0
-var userScore = 0
-
 // ======== From MDN :  to get a random number (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#Using_Math.random())
 
-// Use this fucntion to generatate all of the numbers.  This particular function will include both the minamum and maximum numbers.//
+// Use this GLOBAL fucntion to generatate all of the numbers.  This particular function will include both the minamum and maximum numbers.//
 
+//=== GLOBAL ===//
 function getRandom(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// console.log(getRandomIntInclusive(1,3));
+var userScore = 0
+var wins = 0
+var losses = 0
 
-// console.log(random(121));
-// console.log(random(13));
+var stoneOneValue = getRandom(1, 12);
+var stoneTwoValue = getRandom(1, 12);
+var stoneThreeValue = getRandom(1, 12);
+var stoneFourValue = getRandom(1, 12);
+var targetNumber = getRandom(19,120);
+console.log("targetNumber from global "+ targetNumber)
+console.log("stonevalue from global: "+stoneOneValue, stoneTwoValue, stoneThreeValue, stoneFourValue)
 
-
-//=== Beginning of Game object litteral ===//
-
+//=============== Beginning of Game object litteral =============================//
 crystalsCollectorGame = {
-    stones: ["#stone1", "#stone2", "#stone3", "#stone4"],
+    // stones: ["#stone1", "#stone2", "#stone3", "#stone4"],
 
+    //========== Start the Game ===============//
     start: startGame = (function () {
-        // Set the random number using the function below //
-        $("#randomNumber").text("Target Number " + getRandom(19, 120));
-
-        //== set all the values then replace the numbers with images of the individual stones?
-        for (i = 0; i < this.stones.length; i++) {
-           stoneValueObject =  $(this.stones[i]).text(getRandom(1, 12))
-           
-            //=== Replace random numbers with stones (get help!) ===//
-            
-            console.log(stoneValueObject.i); 
-
-            //===== set user score to 0 with variable =====//
-            $("#totalScore").text(userScore);
-
-            //=== Connection Confirmation ===//
-            // console.log("startGamefunction is running! ");
-        }
-    }),
-
-    numRange: function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    },
-
-    stone1: $("#stone1").click(function () {
-        $("input:text").val(getRandomIntInclusive(1, 3));
+        // Set the target number to a random number between 19-120 //
+        $("#randomNumber").text("Target Number " + targetNumber);
+        console.log("targetNumber from startGame function: " + targetNumber);
+        // Create a variable for each button and give it a random value between 1-12 //
+        // How do I access these variables outside of this function and object?
+        stoneOneValue = getRandom(1, 12);
+        stoneTwoValue = getRandom(1, 12);
+        stoneThreeValue = getRandom(1, 12);
+        stoneFourValue = getRandom(1, 12);
+        console.log(" stoneOneValue from the startGame function: " + stoneOneValue);
+        console.log(" stoneTwoValue from the startGame fucntion: " + stoneTwoValue);
+        console.log(" stoneThreeValue from the startGame fucntion: " + stoneThreeValue);
+        console.log(" stoneFourValue from the startGame fucntion: " + stoneFourValue);
+        //===== set score, wins, losses to 0 with global variable =====//
+        $("#totalScore").text(userScore);
+        $("#wins").text(wins);
+        $("#losses").text(losses);
     }),
 }
-//=== End of Object Littertal ===//
+//============================= End of Object Littertal ===========================//
 
 
-//========= Start the game here! ==========//
+//========= Startbutton ==========//
 $("#startBtn").click(function () {
-    //== create a function  in the object above that restarts the game with out refreshing the page and put it where the console.log is now.
-    //console.log(crystalsCollectorGame.stones);
     crystalsCollectorGame.start();
+    $("#startBtn").text("Reset Game");
 });
 
-//=== Crystal functionality ===//
+//============================= Crystal Button Object Litteral ===========================//
+//==the crystal buttons are in a new object (multidimensional object)
+// crystalButtons = {
+//     stone1: $("#stone1").click(function () {
+//         currentScore = stoneOneValue + userScore;
+//         console.log(currentScore);
+//     })
+// }
 
-$(".stones").click(function () {
-    //=== add the random number to the total score
-    console.log("i clicked a stone");
+//=== Assign numbers to buttons individually.
+// is there a way to check the current value of a variable before executing math?
+$("#stone1").click(function () {
+    currentScore = stoneOneValue.val + userScore.val;
+    $("#totalScore").text(currentScore);
+    console.log("currentScore from stone one:  " + currentScore);
+    console.log("stoneValue from button click "+stoneOneValue);
 });
+
+$("#stone2").click(function () {
+    currentScore = stoneTwoValue + userScore;
+    $("#totalScore").text(currentScore);
+    console.log("currentScore from stone two:  " + currentScore);
+    console.log("stoneValue from button click "+stoneTwoValue);
+});
+
+$("#stone3").click(function () {
+    currentScore = stoneThreeValue + userScore;
+    $("#totalScore").text(currentScore);
+    console.log("currentScore from stone three:  " + currentScore);
+    console.log("stoneValue from button click "+ stoneThreeValue);
+});
+
+$("#stone4").click(function () {
+    currentScore = parseInt(stoneFourValue) + parseInt(userScore);
+    $("#totalScore").text(currentScore);
+    console.log("currentScore from stone three:  " + currentScore);
+    console.log("stoneValue from button click "+ stoneFourValue);
+});
+
+//========================= Add stone value to user score =============//
+
+
+
+//========================= Win or Lose Conditions ===================//
+
+if (userScore === targetNumber ){
+    $("#wins").text(wins++);
+}
+
+if(userScore > targetNumber){
+    $("#losses").text(losses++);
+}

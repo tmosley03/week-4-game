@@ -7,6 +7,10 @@ body {
     margin-left: 5px;
 }
 
+.btn {
+    text-align: center;
+}
+
 h1 {
     font-family: 'Fredericka the Great', cursive;
     color: white;
@@ -35,25 +39,29 @@ h1 {
     height: auto;
 }
 
-#crystals {
+
+/* #crystals {
     border: solid 1px white;
     display: inline-block;
     padding: 2px;
     margin-bottom: 15px;
     background-color: lightgray;
     text-align: center;
-}
+} */
 
 
-/* How can I center this? */
+/* .btn {
+    visibility: hidden;
+} */
 
 .stones {
+    /* visibility: hidden; */
     display: inline-block;
     height: 50px;
-    width: 50;
+    width: 50px;
     text-align: center;
     /* border: solid 1px black; */
-    margin-right: 50px;
+    /* margin-right: 50px; */
 }
 
 #scoreText {
@@ -75,6 +83,7 @@ h1 {
     border: solid 1px white;
     background-color: lightblue;
     margin-bottom: 15px;
+    padding-top: 10px;
     display: inline-block;
     text-align: center;
     padding: 0 auto;
