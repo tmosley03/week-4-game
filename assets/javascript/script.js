@@ -19,12 +19,12 @@ function getRandom(min, max) {
 function scoreKeeper() {
     if (currentScore === targetNumber) {
         $("#wins").text(wins++);
-        alert("YOU WIN!!!!!");
+        alert("YOU WIN!!!!!  " +" Your Number is: " + currentScore);
         startGame();
     }
     else if (currentScore > targetNumber+1) {
         $("#losses").text(losses++);
-        alert("You have exceeded the target number.  :-( Please try again.");
+        alert("You have exceeded the target number.  :-(   Please try again. " + " Your Number is: " + currentScore);
         startGame();
     }
 }
@@ -44,8 +44,6 @@ var targetNumber = getRandom(19, 120);
 
 //=============== Beginning of Game object litteral =============================//
 crystalsCollectorGame = {
-    // stones: ["#stone1", "#stone2", "#stone3", "#stone4"],
-
     //========== Start the Game ===============//
     start: startGame = (function () {
         currentScore = 0;
