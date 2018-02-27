@@ -21,6 +21,7 @@ h1 {
     margin-right: 10px;
     margin-bottom: 50px;
     display: inline-block;
+    border-radius: 5px;
 }
 
 #instructions p {
@@ -31,6 +32,7 @@ h1 {
 #record {
     background-color: lightcoral;
     margin-left: 25px;
+    border-radius: 5px;
 }
 
 #record h3 {
@@ -60,6 +62,7 @@ h1 {
     height: 50px;
     width: 50px;
     text-align: center;
+    border-radius: 5px;
     /* border: solid 1px black; */
     /* margin-right: 50px; */
 }
@@ -76,6 +79,7 @@ h1 {
     margin-bottom: 15px;
     display: inline-block;
     text-align: center;
+    border-radius: 5px;
 }
 
 #totalScore {
@@ -87,4 +91,5 @@ h1 {
     display: inline-block;
     text-align: center;
     padding: 0 auto;
+    border-radius: 5px;
 }
